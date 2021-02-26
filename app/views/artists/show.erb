@@ -1,0 +1,7 @@
+<h1><%=@artist.name%></h1>
+<p>Genre/s: <%= @artist.genres.map {|genre| "<a href='/genres/#{genre.slug}'>#{genre.name}</a>"}.uniq.join(", ") %></p>
+Song/s: <ul>
+<% @artist.songs.each do |song| %>
+<li><a href='/songs/<%=song.slug%>'><%=song.name%></a></li>
+<%end%>
+</ul>shotgun
